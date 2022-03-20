@@ -1,8 +1,44 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<section id="about">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dvnt3s · Homepage</title>
+    <meta name="description" content="The John Doe template converted into a Jekyll theme.">
+
+    <link rel="alternate" type="application/atom+xml" title="Daniil S." href="/atom.xml">
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div class="container">
+    <header>
+    <h1>
+        <a href="/#blog">Daniil S.</a>
+    </h1>
+    <nav>
+        
+    <a href="/#about">About me</a>
+
+    <a href="/#blog">Blog</a>
+
+    <a href="/#contacts">Contacts</a>
+
+    </nav>
+</header>
+    <main>
+        <section id="about">
   <!-- ABOUT -->
   <p>This is the about page. <a href="#another-page">This is a link to another page</a>.</p>
   <figure>
@@ -19,11 +55,13 @@ layout: default
   <article>
     <ul>
       
-    {% for post in site.posts %}
+    
     <li>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date
-        | date: "%B %-d, %Y" }}</time></h2>
-    {% endfor %} 
+    <h2><a href="/jekyll/update/2022/03/10/hello-world.html">Hello world!</a> <time datetime="2022-03-10T22:50:37+03:00">March 10, 2022</time></h2>
+    
+    <li>
+    <h2><a href="/jekyll/update/2020/11/22/welcome-to-jekyll.html">Welcome to Jekyll!</a> <time datetime="2020-11-22T16:34:37+03:00">November 22, 2020</time></h2>
+     
     </li>
     </ul>
   </article>
@@ -74,3 +112,11 @@ layout: default
 
 <a href="#about" class="lightbox" id="img-about"><img loading="lazy" alt=""
     src="//via.placeholder.com/2400x1200/ddd/ccc"></a>
+    </main>
+
+    <footer style="text-align:center">
+   Made in 2022. <br> When something got unusual.
+</footer>
+</div>
+  </body>
+</html>

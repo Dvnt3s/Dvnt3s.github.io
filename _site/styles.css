@@ -10,16 +10,16 @@
 
 @media (prefers-color-scheme: dark) {
   * {
-    --textcolor: #ededf1;
-    --bgcolor: #021d1a;
-    --highlight: #E98A15;
+    --textcolor: #dadada;
+    --bgcolor: #141414;
+    --highlight: #ffc400;
   }
 }
 
 body {
   font-size: 18px;
   font-family: system-ui, sans-serif;
-  line-height: 1.45;
+  line-height: 1.4;
   color: var(--textcolor);
   background: var(--bgcolor);
   position: relative;
@@ -27,27 +27,11 @@ body {
   margin: 0 auto;  /* centers the layout */
 }
 
-@media only screen and (max-width: 680px) { /* smaller screens */
-  body {
-    font-size: 16px;
-  }
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
-
 /* ------- Sections ------- */
 
-section, div.post {
-  padding: calc(1em + 5vw) 5vw 8vw 5vw;
-  /* !! Everything below is needed !! */
+section {
+  padding: calc(6em + 5vw) 5vw 8vw 5vw;
+  /* ! Everything below is needed ! */
   display: none;
   position: absolute;
   top: 0;
@@ -64,38 +48,22 @@ section#home { /* Show #home by default */
   display: block;
 }
 
-div.post { /* Show post content by default since it loads a separate page */
-  display: block;
-}
-
 /* ------- Header ------- */
 
 header {
-  padding: 2vw 5vw 0 5vw;
+  padding: 5vw 5vw 0 5vw;
   display: flex;
   flex-wrap: wrap;
-  position: relative;
+  position: absolute;
+  width: 100%;
   z-index: 2;
 }
 
-footer {
-  display: flex;
-  color: #413e3e;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  width: 100%;
-  justify-content:center;
-    align-items:center;
-}
-
 header h1 {
-  font-size: 1.3em;
-  flex: 1;
+  font-size: 1em;
+  flex: 1; /* pushes nav to the right */
   white-space: nowrap;
-  padding: 0 20vw .5em 0;
+  padding: 0 5vw .5em 0;
 }
 
 nav a:not(:last-of-type) {
@@ -125,7 +93,7 @@ h2, h3, h4 {
 }
 
 p, ul, ol, article {
-  max-width: 70ch; /* Limit line-length to 60 characters */
+  max-width: 60ch; /* Limit line-length to 60 characters */
   margin-bottom: .6em;
 }
 
@@ -157,7 +125,7 @@ hr {
   height: 1px;
   border: 0;
   background: currentColor;
-  opacity: .4;
+  opacity: .1;
   margin: 1.2em 0;
 }
 
@@ -287,6 +255,7 @@ section:target iframe {
 
 a[href*="//"]:after { 
   font-weight: 300;
+  font-size: .85em;
   content: "\2197"; /* top right arrow: ↗ */
   color: var(--textcolor);
   opacity: .25;
@@ -309,6 +278,8 @@ a:before {
 a[href$=".pdf"]:before { content: "PDF"; }
 a[href$=".txt"]:before { content: "TXT"; }
 a[href$=".mp3"]:before { content: "MP3"; }
+a[href$=".zip"]:before { content: "ZIP"; }
+a[href$=".rar"]:before { content: "RAR"; }
 a[href$=".jpeg"]:before,
 a[href$=".jpg"]:before,
 a[href$=".gif"]:before,
@@ -317,11 +288,10 @@ a[href$=".png"]:before { content: "IMG"; }
 /* ------- News ------- */
 
 article + article {
-  margin-top: 5em;
+  margin-top: 4.5em;
 }
 
 article h2 {
-  font-size: 1em;
   font-weight: 700;
   margin: 0 0 1em 0;
 }
@@ -338,7 +308,7 @@ article time {
 .grid {
   display: grid;
   grid-gap: 5vmin;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 150px = minimum image size */
   grid-auto-flow: dense;
   padding: 2em 0;
 }
@@ -348,6 +318,11 @@ article time {
   border: 0;
 }
 
+.grid a:hover {
+  transform: scale(.975);
+}
+
+/* For a square ratio */
 .grid a:before {
   content: "";
   display: block;
@@ -362,10 +337,6 @@ article time {
   object-fit: contain;
 }
 
-.grid a:hover {
-  transform: scale(.975);
-}
-
 /* ------- Slideshow ------- */
 
 .slides {
@@ -373,7 +344,7 @@ article time {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
@@ -386,12 +357,10 @@ article time {
   place-items: center;
   align-content: center;
   scroll-snap-align: center;
-  background-size: cover; /* Full bleed background images */
-  background-position: center center;
 }
 
 .slides figure img {
-  max-height: 88vh;
+  max-height: 88vh; /* Adjust if needed */
 }
 
 .slides figure.cover {
@@ -418,8 +387,8 @@ article time {
   position: fixed;
   top: 0;
   right: 0;
+  bottom: 0;
   left: 0;
-  height: 100vh;
   display: grid;
   place-items: center;
   align-content: center;
@@ -463,6 +432,16 @@ article time {
   z-index: 4;
 }
 
+/* ------- Smaller screens ------- */
+
+@media only screen and (max-width: 680px) {
+  body { font-size: 16px; }
+}
+
+@media only screen and (max-width: 540px) {
+  nav { width: 100%; } /* Fix for older webkit versions */
+}
+
 /* ------- Print ------- */
 
 @media print {
@@ -475,8 +454,26 @@ article time {
   }
   
   /* Inline footnotes */
+  
   label + input + small { display: inline; }
   label + input + small:before { content: "["; }
   label + input + small:after { content: "]"; }
+  
+  /* Slides */
+  
+  .slides, .slides figure {
+    position: relative;
+    height: auto;
+    padding: 0;
+  }
+
+  .slides figure img, .slides figure.cover img {
+    max-height: auto;
+    position: relative;
+    z-index: 1;
+    width: auto;
+    height: 100vh;
+    object-fit: contain;
+  }
     
 }
