@@ -2,31 +2,170 @@
 layout: default
 ---
 
+<section id="start_page">
+
+
+</section>
+
+
 <section id="about">
   <!-- ABOUT -->
-  <p>This is the about page. <a href="#another-page">This is a link to another page</a>.</p>
-  <figure>
-    <a href="#img-about">
-      <img loading="lazy" alt="" src="//via.placeholder.com/1200x600/ddd/ccc" width="1200" height="600"></a>
-    <figcaption>Example of an image with a link to a larger version.</figcaption>
-  </figure>
-  <a href="https://example.com/pdf.pdf">The Complete Insider’s Guide to Penny Stocks</a>
+  <p><strong>Hi! My name is Daniil Svirskiy.</strong></p>
+  <p>Currently I'm a first year PhD student at <a href="https://www.msu.ru/en/">Moscow State University</a>, Faculty of
+    Physics.
+    Doing my research in the field of:
+    <li style="margin-left: 50px;">Experimental quantum optics <label for="1">*</label><input type="checkbox"
+        id="1"><small>This includes quantum
+        engineering of bi-photon states generated in process of spontaneous parametric downconversion, quantum
+        tomography.</small></li>
+    <li style="margin-left: 50px;">Quantum computing with neutral atoms <label for="2">*</label><input type="checkbox"
+        id="2"><small>Joined this project in the beginning of 2022.</small>
+  </p>
+  </li>
+  <p>Here is my short CV. <a href="/#contacts">Write</a> to me for full one.</p>
+  <hr>
+  <em>
+    <li type="circle" style="margin-left: 20px;"><strong>Education</strong>
+  </em>
+  <ol>
+    <table style="width:79ch; margin-top: 10px;">
+      <tbody>
+        <tr>
+          <td style="width:18ch">
+            <p>2021 — present</p>
+          </td>
+          <td style="width:700px">
+            <p>PhD student, Moscow State University</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:18ch">
+            <p>2019 — 2021</p>
+          </td>
+          <td style="width:700px">
+            <p>Master's degree in Applied Physics, <a href="https://www.skoltech.ru/en/">Skoltech</a></p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:18ch">
+            <p>2014 — 2018</p>
+          </td>
+          <td style="width:700px">
+            <p>Bachelor's degree in Physics, Moscow State University</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:18ch">
+            <p>2014</p>
+          </td>
+          <td style="width:700px">
+            <p>Graduated from <em>Kurchatov</em> school №1189, Moscow</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ol>
+  </li>
+
+  <em>
+    <li type="circle" style="margin-left: 20px;"><strong>Achivements</strong>
+  </em>
+  <ol>
+    <table style="width:79ch; margin-top: 10px;">
+      <tbody>
+        <tr>
+          <td style="width:18ch">
+            <p>2021</p>
+          </td>
+          <td style="width:700px">
+            <p>Prizewinner of the <a href="https://yandex.ru/profi/">all-Russian Student Olympiad </a><em>"Я -
+                Профессионал"</em>, direction: <em>"Quantum technologies"</em></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ol>
+  </li>
+
+  <em>
+    <li type="circle" style="margin-left: 20px;"><strong>Research experience</strong>
+  </em>
+  <ol>
+    <table style="width:79ch; margin-top: 10px;">
+      <tbody>
+
+
+        <tr>
+          <td style="width:18ch">
+            <p>2021 — present</p>
+          </td>
+          <td style="width:700px">
+            <p>Junior researcher at <a href="https://rqc.ru/">Russian Quantum Center</a>, Moscow</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:18ch">
+            <p>2021</p>
+          </td>
+          <td style="width:700px">
+            <p>Master's thesis: <em>"Modelling and development of a free space optical communication link"</em></p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:18ch">
+            <p>2018</p>
+          </td>
+          <td style="width:700px">
+            <p>Bachelor's thesis: <em>"Ghost imaging of two-dimensional polarizing objects under continuous incoherent
+                light"</em></p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:18ch">
+            <p>2016</p>
+          </td>
+          <td style="width:700px">
+            <p>Coursework: <em>"Nonlinear optical transformation of femtosecond laser pulses in optical waveguides"</em>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ol>
+  </li>
+
+
+  <em>
+    <li type="circle" style="margin-left: 20px;"><strong>Publications</strong>
+  </em>
+  <ol>
+    <p style="margin-top: 10px;">Full list of my publications is avaliable <a
+        href="https://istina.msu.ru/profile/d_svirskiy/">here (RUS)</a> or
+      <a href="https://scholar.google.com/citations?hl=ru&user=h4x0JwMAAAAJ">there</a>
+    </p>
+  </ol>
+  </li>
+  <hr>
   <br>
-  <a href="#blog">← back to blog</a>
-  
+  <a href="#blog">← to blog</a>
+
 </section>
 
 <section id="blog">
   <!-- Blog -->
+  <p> Здесь вперемешку моя жизнь, мысли и что-то научное.<label for="3">*</label><input type="checkbox"
+      id="3"><small>Пока на русском, а если не заброшу и научусь складно сочинять — переключусь на eng.</small></p>
+
+  <hr>
   <article>
     <ul>
-      
-    {% for post in site.posts %}
-    <li>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date
-        | date: "%B %-d, %Y" }}</time></h2>
-    {% endfor %} 
-    </li>
+      {% for post in site.posts %}
+      <li>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}">{{
+            post.date
+            | date: "%B %-d, %Y" }}</time></h2>
+        {% endfor %}
+      </li>
     </ul>
   </article>
 </section>
@@ -48,10 +187,10 @@ layout: default
 
 <section id="contacts">
 
-  <nav>You can contact me via email: <a href="memail@gmail.com">myemail@gmail.com</a></nav>
-  <nav>Or telegram: <a href="#">@telega</a></nav>
+  <nav>You can contact me via email: <a href="mailto:daniilsvirskiy@gmail.com">daniilsvirskiy@gmail.com</a></nav>
+  <nav>Or telegram: <a href="https://t.me/dsvky">@dsvky</a></nav>
   <hr>
-  <a href="#blog">← back to blog</a>
+  <a href="#about">← back</a>
 
 </section>
 

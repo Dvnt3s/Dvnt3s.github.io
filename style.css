@@ -81,14 +81,15 @@ header {
 footer {
   display: flex;
   color: #413e3e;
+  
   position: relative;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 20px;
   width: 100%;
   justify-content:center;
-    align-items:center;
+  margin-top:1189px;
 }
 
 header h1 {
@@ -125,7 +126,7 @@ h2, h3, h4 {
 }
 
 p, ul, ol, article {
-  max-width: 70ch; /* Limit line-length to 60 characters */
+  max-width: 79ch; /* Limit line-length to 60 characters */
   margin-bottom: .6em;
 }
 
