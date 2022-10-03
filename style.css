@@ -192,6 +192,7 @@ blockquote:before {
 img, svg, video, audio {
   display: block;
   height: auto;
+  width: auto;
   fill: currentColor;
 }
   
